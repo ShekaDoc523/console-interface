@@ -14,10 +14,10 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.msXbox.fields.id') }}
+                        {{ trans('cruds.msXbox.fields.index') }}
                     </th>
                     <th>
-                        {{ trans('cruds.msXbox.fields.game') }}
+                        {{ trans('cruds.msXbox.fields.game_id') }}
                     </th>
                     <th>
                         {{ trans('cruds.msXbox.fields.product_name') }}
@@ -100,7 +100,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-  
+
   let dtOverrideGlobals = {
     buttons: dtButtons,
     processing: true,
@@ -110,8 +110,8 @@
     ajax: "{{ route('admin.ms-xboxes.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'game', name: 'game' },
+{ data: 'index', name: 'index' },
+{ data: 'game_id', name: 'game_id' },
 { data: 'product_name', name: 'product_name' },
 { data: 'ranking', name: 'ranking' },
 { data: 'price', name: 'price' },
@@ -132,7 +132,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false

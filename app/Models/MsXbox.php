@@ -19,7 +19,7 @@ class MsXbox extends Model
     ];
 
     protected $fillable = [
-        'game',
+        'game_id',
         'product_name',
         'ranking',
         'price',

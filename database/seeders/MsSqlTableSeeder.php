@@ -19,7 +19,7 @@ class MsSqlTableSeeder extends Seeder
     {
         $csvFile=__DIR__.'/../xbox.csv';
         $data = $this->csv_to_array($csvFile);
-        collect($data)->chunk(10)->each( function($items){
+        collect($data)->chunk(100)->each( function($items){
             MsXbox::insert($items->toArray());
         });
     }

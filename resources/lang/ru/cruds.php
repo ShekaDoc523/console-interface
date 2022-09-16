@@ -69,9 +69,9 @@ return [
         'title'          => 'Ms Xbox',
         'title_singular' => 'Ms Xbox',
         'fields'         => [
-            'id'                   => 'ID',
+            'index'                   => 'Index',
             'id_helper'            => ' ',
-            'game'                 => 'Game',
+            'game_id'                 => 'Game ID',
             'game_helper'          => ' ',
             'product_name'         => 'Product Name',
             'product_name_helper'  => ' ',

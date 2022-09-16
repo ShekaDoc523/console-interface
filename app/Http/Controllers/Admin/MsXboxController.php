@@ -37,11 +37,11 @@ class MsXboxController extends Controller
             ));
             });
 
-            $table->editColumn('id', function ($row) {
-                return $row->id ? $row->id : '';
+            $table->editColumn('index', function ($row) {
+                return $row->index ? $row->index : '';
             });
-            $table->editColumn('game', function ($row) {
-                return $row->game ? $row->game : '';
+            $table->editColumn('game_id', function ($row) {
+                return $row->game_id ? $row->game_id : '';
             });
             $table->editColumn('product_name', function ($row) {
                 return $row->product_name ? $row->product_name : '';

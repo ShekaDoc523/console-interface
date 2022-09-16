@@ -17,7 +17,7 @@ class StoreMsXboxRequest extends FormRequest
     public function rules()
     {
         return [
-            'game' => [
+            'game_id' => [
                 'string',
                 'required',
             ],
