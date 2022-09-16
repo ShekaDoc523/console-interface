@@ -33,6 +33,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Xbox Now
     Route::resource('xbox-now', 'XboxNowController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Xbox Now DLC
+    Route::resource('xbox-now-dlc', 'XboxNowDlcController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

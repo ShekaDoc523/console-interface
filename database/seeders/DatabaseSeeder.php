@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\XboxNow;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +17,7 @@ class DatabaseSeeder extends Seeder
             MsSqlTableSeeder::class,
             MsSqlDlcTableSeeder::class,
             XboxNowTableSeeder::class,
+            XboxNowDlcTableSeeder::class,
         ]);
     }
 }
