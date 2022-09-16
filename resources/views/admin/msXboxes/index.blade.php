@@ -92,7 +92,11 @@
     </div>
 </div>
 
-
+<style>
+    .dt-buttons, #DataTables_Table_0_filter {
+        display: none;
+    }
+</style>
 
 @endsection
 @section('scripts')

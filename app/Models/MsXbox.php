@@ -10,12 +10,11 @@ class MsXbox extends Model
 {
     use HasFactory;
 
-    public $table = 'ms_xboxes';
+    public $table = 'ms_xbox';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -31,7 +30,6 @@ class MsXbox extends Model
         'source',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

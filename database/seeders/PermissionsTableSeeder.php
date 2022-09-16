@@ -80,6 +80,10 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 18,
+                'title' => 'ms_xboxdlc_access',
+            ],
+            [
+                'id'    => 19,
                 'title' => 'profile_password_edit',
             ],
         ];

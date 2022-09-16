@@ -67,6 +67,16 @@
                 </a>
             </li>
         @endcan
+        @can('ms_xboxdlc_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.ms-xboxesdlc.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/ms-xboxesdlc") || request()->is("admin/ms-xboxesdlc/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fab fa-xbox c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.msXboxDlc.title') }}
+                </a>
+            </li>
+        @endcan
         @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
             @can('profile_password_edit')
                 <li class="c-sidebar-nav-item">

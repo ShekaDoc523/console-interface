@@ -8,7 +8,7 @@ class CreateMsXboxesTable extends Migration
 {
     public function up()
     {
-        Schema::create('ms_xboxes', function (Blueprint $table) {
+        Schema::create('ms_xbox', function (Blueprint $table) {
             $table->bigIncrements('index');
             $table->string('game_id');
             $table->string('product_name')->nullable();
