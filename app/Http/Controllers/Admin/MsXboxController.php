@@ -19,23 +19,6 @@ class MsXboxController extends Controller
             $query = MsXbox::query()->select(sprintf('%s.*', (new MsXbox())->table));
             $table = Datatables::of($query);
 
-            $table->addColumn('placeholder', '&nbsp;');
-            $table->addColumn('actions', '&nbsp;');
-
-            $table->editColumn('actions', function ($row) {
-                $viewGate = 'ms_xbox_show';
-                $editGate = 'ms_xbox_edit';
-                $deleteGate = 'ms_xbox_delete';
-                $crudRoutePart = 'ms-xboxes';
-
-                return view('partials.datatablesActions', compact(
-                'viewGate',
-                'editGate',
-                'deleteGate',
-                'crudRoutePart',
-                'row'
-            ));
-            });
 
             $table->editColumn('index', function ($row) {
                 return $row->index ? $row->index : '';
@@ -53,7 +36,7 @@ class MsXboxController extends Controller
                 return $row->price ? $row->price : '';
             });
             $table->editColumn('on_sale', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->on_sale ? 'checked' : null) . '>';
+                return '<input type="checkbox" disabled '.($row->on_sale ? 'checked' : null).'>';
             });
             $table->editColumn('price_on_sale', function ($row) {
                 return $row->price_on_sale ? $row->price_on_sale : '';
@@ -62,7 +45,7 @@ class MsXboxController extends Controller
                 return $row->release_date ? $row->release_date : '';
             });
             $table->editColumn('pre_order', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->pre_order ? 'checked' : null) . '>';
+                return '<input type="checkbox" disabled '.($row->pre_order ? 'checked' : null).'>';
             });
             $table->editColumn('platform', function ($row) {
                 return $row->platform ? $row->platform : '';
@@ -71,7 +54,7 @@ class MsXboxController extends Controller
                 return $row->source ? $row->source : '';
             });
 
-            $table->rawColumns(['actions', 'placeholder', 'on_sale', 'pre_order']);
+            $table->rawColumns(['on_sale', 'pre_order']);
 
             return $table->make(true);
         }

@@ -20,24 +20,6 @@ class MsXboxDlcController extends Controller
             $query = MsXboxDlc::query()->select(sprintf('%s.*', (new MsXboxDlc())->table));
             $table = Datatables::of($query);
 
-            $table->addColumn('placeholder', '&nbsp;');
-            $table->addColumn('actions', '&nbsp;');
-
-            $table->editColumn('actions', function ($row) {
-                $viewGate = 'ms_xboxdlc_show';
-                $editGate = 'ms_xboxdlc_edit';
-                $deleteGate = 'ms_xboxdlc_delete';
-                $crudRoutePart = 'ms-xboxdlc';
-
-                return view('partials.datatablesActions', compact(
-                'viewGate',
-                'editGate',
-                'deleteGate',
-                'crudRoutePart',
-                'row'
-            ));
-            });
-
             $table->editColumn('index', function ($row) {
                 return $row->index ? $row->index : '';
             });
@@ -59,8 +41,6 @@ class MsXboxDlcController extends Controller
             $table->editColumn('platform', function ($row) {
                 return $row->platform ? $row->platform : '';
             });
-
-            $table->rawColumns(['actions', 'placeholder']);
 
             return $table->make(true);
         }

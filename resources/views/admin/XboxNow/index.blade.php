@@ -10,9 +10,6 @@
             <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-XboxNow">
                 <thead>
                 <tr>
-                    <th width="10">
-
-                    </th>
                     <th>
                         {{ trans('cruds.XboxNow.fields.index') }}
                     </th>
@@ -60,8 +57,6 @@
                     </th>
                 </tr>
                 <tr>
-                    <td>
-                    </td>
                     <td>
                     </td>
                     <td>
@@ -121,7 +116,6 @@
                 aaSorting: [],
                 ajax: "{{ route('admin.xbox-now.index') }}",
                 columns: [
-                    {data: 'placeholder', name: 'placeholder'},
                     {data: 'index', name: 'index'},
                     {data: 'game_id', name: 'game_id'},
                     {data: 'title', name: 'title'},
@@ -141,6 +135,7 @@
                 orderCellsTop: true,
                 order: [[1, 'desc']],
                 pageLength: 100,
+                columnDefs: []
             };
             let table = $('.datatable-XboxNow').DataTable(dtOverrideGlobals);
             $('a[data-toggle="tab"]').on('shown.bs.tab click', function (e) {

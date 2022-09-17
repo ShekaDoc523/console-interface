@@ -29,12 +29,12 @@ class XboxNowController extends Controller
                 $crudRoutePart = 'ms-xboxes';
 
                 return view('partials.datatablesActions', compact(
-                'viewGate',
-                'editGate',
-                'deleteGate',
-                'crudRoutePart',
-                'row'
-            ));
+                    'viewGate',
+                    'editGate',
+                    'deleteGate',
+                    'crudRoutePart',
+                    'row'
+                ));
             });
 
             $table->editColumn('index', function ($row) {
@@ -50,13 +50,13 @@ class XboxNowController extends Controller
                 return $row->url ? $row->url : '';
             });
             $table->editColumn('is_game', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->is_game ? 'checked' : null) . '>';
+                return '<input type="checkbox" disabled '.($row->is_game ? 'checked' : null).'>';
             });
             $table->editColumn('release_date', function ($row) {
                 return $row->release_date ? $row->release_date : '';
             });
             $table->editColumn('on_sale', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->on_sale ? 'checked' : null) . '>';
+                return '<input type="checkbox" disabled '.($row->on_sale ? 'checked' : null).'>';
             });
             $table->editColumn('discount_percent', function ($row) {
                 return $row->discount_percent ? $row->discount_percent : '';

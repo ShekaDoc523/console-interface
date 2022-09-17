@@ -21,23 +21,6 @@ class XboxNowDlcController extends Controller
             $query = XboxNowDlc::query()->select(sprintf('%s.*', (new XboxNowDlc())->table));
             $table = Datatables::of($query);
 
-            $table->addColumn('placeholder', '&nbsp;');
-
-            $table->editColumn('actions', function ($row) {
-                $viewGate = 'xbox_now_dlc_show';
-                $editGate = 'xbox_now_dlc_edit';
-                $deleteGate = 'xbox_now_dlc_delete';
-                $crudRoutePart = 'xbox-now-dlc';
-
-                return view('partials.datatablesActions', compact(
-                'viewGate',
-                'editGate',
-                'deleteGate',
-                'crudRoutePart',
-                'row'
-            ));
-            });
-
             $table->editColumn('index', function ($row) {
                 return $row->index ? $row->index : '';
             });
@@ -51,10 +34,10 @@ class XboxNowDlcController extends Controller
                 return $row->url ? $row->url : '';
             });
             $table->editColumn('is_game', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->is_game ? 'checked' : null) . '>';
+                return '<input type="checkbox" disabled '.($row->is_game ? 'checked' : null).'>';
             });
             $table->editColumn('on_sale', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->on_sale ? 'checked' : null) . '>';
+                return '<input type="checkbox" disabled '.($row->on_sale ? 'checked' : null).'>';
             });
             $table->editColumn('discount_percent', function ($row) {
                 return $row->discount_percent ? $row->discount_percent : '';
@@ -81,7 +64,7 @@ class XboxNowDlcController extends Controller
                 return $row->price_region_3 ? $row->price_region_3 : '';
             });
 
-            $table->rawColumns(['placeholder', 'on_sale', 'is_game']);
+            $table->rawColumns(['on_sale', 'is_game']);
 
             return $table->make(true);
         }
