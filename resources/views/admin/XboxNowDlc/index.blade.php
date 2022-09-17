@@ -109,7 +109,7 @@
                 serverSide: true,
                 retrieve: true,
                 aaSorting: [],
-                ajax: "{{ route('admin.xbox-now.index') }}",
+                ajax: "{{ route('admin.xbox-now-dlc.index') }}",
                 columns: [
                     {data: 'index', name: 'index'},
                     {data: 'game_id', name: 'game_id'},
