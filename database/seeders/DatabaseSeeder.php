@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
             PermissionRoleTableSeeder::class,
             UsersTableSeeder::class,
             RoleUserTableSeeder::class,
-            MsSqlTableSeeder::class,
-            MsSqlDlcTableSeeder::class,
-            XboxNowTableSeeder::class,
-            XboxNowDlcTableSeeder::class,
+//            MsSqlTableSeeder::class,
+//            MsSqlDlcTableSeeder::class,
+//            XboxNowTableSeeder::class,
+//            XboxNowDlcTableSeeder::class,
         ]);
     }
 }
